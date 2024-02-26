@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/ubuntu/ros2_ws/install/robotiq_driver/include/**",
+        "/home/ubuntu/ros2_ws/install/serial/include/**",
+        "/home/ubuntu/ros2_ws/install/robotiq_controllers/include/**",
+        "/home/ubuntu/ros2_ws/install/cobot_arm_examples/include/**",
+        "/opt/ros/iron/include/**",
+        "/home/ubuntu/ros2_ws/src/cobot_arm_examples/include/**",
+        "/home/ubuntu/ros2_ws/src/mycobot_ros2/mycobot_description/include/**",
+        "/home/ubuntu/ros2_ws/src/ros2_robotiq_gripper/robotiq_controllers/include/**",
+        "/home/ubuntu/ros2_ws/src/ros2_robotiq_gripper/robotiq_driver/include/**",
+        "/home/ubuntu/ros2_ws/src/serial/include/**",
+        "/home/ubuntu/ros2_ws/src/ur_robotiq/ur_robotiq_description/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
