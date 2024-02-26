@@ -2,6 +2,9 @@
 <robot xmlns:xacro="http://wiki.ros.org/xacro" name="robotiq_gripper">
     <!-- parameters -->
     <xacro:arg name="use_fake_hardware" default="true" />
+    
+    <!-- If visualizing just the gripper with no arm, set the true, otherwise, set to false -->
+    <xacro:property name="gripper_only" value="false"/>
 
     <xacro:macro name="robotiq_gripper" params="
         name
@@ -294,17 +297,19 @@
         </joint>
 
     </xacro:macro>
-
-    <!-- Uncomment this block if you want to see only the gripper in RViz
-    <link name="world" />
-    <xacro:robotiq_gripper name="RobotiqGripperHardwareInterface" prefix="" parent="world" use_fake_hardware="$(arg use_fake_hardware)">
-        <origin xyz="0 0 0" rpy="0 0 0" />
-    </xacro:robotiq_gripper>
-     -->
     
-    <!-- Uncomment this block if you want to see the UR3e with the Robotiq 2F-85 attached. -->
-    <xacro:robotiq_gripper name="RobotiqGripperHardwareInterface" prefix="" parent="ur3e_tool0" use_fake_hardware="$(arg use_fake_hardware)">
-        <origin xyz="0 0 0" rpy="0 0 0" />
-    </xacro:robotiq_gripper>
+    <xacro:if value="${gripper_only}">
+    	<link name="world" />
+    	<xacro:robotiq_gripper name="RobotiqGripperHardwareInterface" prefix="" parent="world" use_fake_hardware="$(arg use_fake_hardware)">
+        	<origin xyz="0 0 0" rpy="0 0 0" />
+    	</xacro:robotiq_gripper>
+    </xacro:if>
+
+    <xacro:if value="${not gripper_only}">
+    	<xacro:robotiq_gripper name="RobotiqGripperHardwareInterface" prefix="" parent="ur3e_tool0" use_fake_hardware="$(arg use_fake_hardware)">
+        	<origin xyz="0 0 0" rpy="0 0 0" />
+    	</xacro:robotiq_gripper>
+    </xacro:if>
+    
   
 </robot>
