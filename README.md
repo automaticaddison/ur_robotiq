@@ -23,6 +23,4 @@ To use this description in your ROS 2 projects:
 
 This project is licensed under the BSD 3-Clause License. See the LICENSE file for details.
 
-## Contributing
 
-Contributions to improve the URDF descriptions or add additional features are welcome. Please submit pull requests or open issues on the GitHub repository.
