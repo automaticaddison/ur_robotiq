@@ -16,7 +16,20 @@ Automatic Addison ROS 2 support for UR robotic arms (specifically UR3e) made by 
 To view this robot in RViz:
 
 1. Clone this repository into your ROS 2 workspace
-2. Build your workspace (i.e. colcon build)
+```bash
+cd ~/ros2_ws/src
+git clone <URL goes here>
+```
+2. Download any dependencies:
+```bash
+cd ~/ros2_ws/
+rosdep install --from-paths src --ignore-src -r -y
+```
+2. Build your workspace
+```bash
+colcon build
+source install/setup.bash
+```
 3. Install the urdf_tutorial package for your ROS distribution:
 
 ```bash
