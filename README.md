@@ -25,18 +25,18 @@ git clone <URL goes here>
 cd ~/ros2_ws/
 rosdep install --from-paths src --ignore-src -r -y
 ```
-2. Build your workspace
+3. Build your workspace
 ```bash
 colcon build
 source install/setup.bash
 ```
-3. Install the urdf_tutorial package for your ROS distribution:
+4. Install the urdf_tutorial package for your ROS distribution:
 
 ```bash
 sudo apt install ros-${ROS_DISTRO}-urdf-tutorial
 ```
 
-4. To launch the URDF model viewer, use the following command:
+5. To launch the URDF model viewer, use the following command:
 
 ```bash
 ros2 launch urdf_tutorial display.launch.py model:=/home/ubuntu/ros2_ws/src/ur_robotiq/ur_robotiq_description/urdf/ur3e_robotiq_2f_85_urdf.xacro
@@ -49,7 +49,7 @@ You can also type:
 ros2 launch ur_description view_ur.launch.py ur_type:=ur3e
 ```
 
-5. Remember to set the Fixed Frame under "Global Options" in RViz to the 'world' frame.
+6. Remember to set the Fixed Frame under "Global Options" in RViz to the 'world' frame.
 
 ## Dependencies
 
