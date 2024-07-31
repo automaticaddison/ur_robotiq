@@ -13,11 +13,34 @@ Automatic Addison ROS 2 support for UR robotic arms (specifically UR3e) made by 
 
 ## Usage
 
-To use this description in your ROS 2 projects:
+To view this robot in RViz:
 
 1. Clone this repository into your ROS 2 workspace
-2. Build your workspace
-3. Reference the `ur3e_robotiq_2f_85_urdf.xacro` file in your launch files or other URDF/Xacro includes
+2. Build your workspace (i.e. colcon build)
+3. Install the urdf_tutorial package for your ROS distribution:
+
+```bash
+sudo apt install ros-${ROS_DISTRO}-urdf-tutorial
+```
+
+4. To launch the URDF model viewer, use the following command:
+
+```bash
+ros2 launch urdf_tutorial display.launch.py model:=/home/ubuntu/ros2_ws/src/ur_robotiq/ur_robotiq_description/urdf/ur3e_robotiq_2f_85_urdf.xacro
+```
+This command will launch the URDF viewer with the Universal Robots robotic arm.
+
+You can also type:
+
+```bash
+ros2 launch ur_description view_ur.launch.py ur_type:=ur3e
+```
+
+5. Remember to set the Fixed Frame under "Global Options" in RViz to the 'world' frame.
+
+## Dependencies
+
+- ROS 2 (tested on ROS 2 Iron)
 
 ## License
 
